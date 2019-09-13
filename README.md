@@ -1,6 +1,11 @@
 # Kubernetese Basic
 
-### Pre installed tools: awscli, kops, kubectl,
+### Pre installed tools: awscli, kops, kubectl
+Find the installation instructions in below links:
+#### AWSCLI: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+#### KOPS: https://github.com/kubernetes/kops/blob/master/docs/install.md
+#### kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+##### Pro TIP - also configure Autocompletion for best performance
 ### create env file:
 ```
 cat project.env << EOF
@@ -59,4 +64,10 @@ kubectl apply -f <filename>
 kubectl get pod (-n namespace if mentioned explicitly)
 kubectl describe pod
 #kubectl describe (object name)
+
+kubectl explain deployment #or any object name
+kubectl port-forward <podname> <localport>:<container port>
+
+kubectl  get pod -L KEY:VALUE  #The selector query
+
 ```
