@@ -1,7 +1,7 @@
-##Kubernetese Basic
+## Kubernetese Basic
 
-#Pre installed tools: awscli, kops, kubectl,
-#create env file:
+# Pre installed tools: awscli, kops, kubectl,
+# create env file:
 ```
 cat project.env << EOF
 export AWS_ACCESS_KEY_ID=<ACCESS key>
@@ -10,21 +10,21 @@ export KOPS_STATE_STORE=s3://<S3 bucket name>
 export CLUSTER_NAME= <clustername>.k8s.local
 EOF
 ```
-#Execute the file
+# Execute the file
 `
 source project.env
 `
 
-#execute KOPS to create a new cluster
+# execute KOPS to create a new cluster
 `
 kops create cluster --zones ap-south-1a $CLUSTER_NAME
 `
-#edit the config below to modify the zones and region
+# edit the config below to modify the zones and region
 `
 kops edit cluster ${CLUSTER_NAME}
 kops update cluster ${CLUSTER_NAME} --yes
 `
-#A new cluster with 1 master and 2 nodes will be created
+# A new cluster with 1 master and 2 nodes will be created
 
 
 ```
@@ -40,10 +40,10 @@ Suggestions:
 
 
 
-###Explore the cluster and name spaces
+### Explore the cluster and name spaces
 ```
 kubectl config get-context
-#kubectl config use-context  <Cluster name>
+# kubectl config use-context  <Cluster name>
 
 kubectl get pod
 kubectl get pod -n kube-system
