@@ -12,7 +12,7 @@ cat project.env << EOF
 export AWS_ACCESS_KEY_ID=<ACCESS key>
 export AWS_SECRET_ACCESS_KEY=<Secret key>
 export KOPS_STATE_STORE=s3://<S3 bucket name>
-export CLUSTER_NAME= <clustername>.k8s.local
+export CLUSTER_NAME=<clustername>.k8s.local
 EOF
 ```
 ### Execute the file
@@ -26,7 +26,8 @@ kops create cluster --zones ap-south-1a $CLUSTER_NAME
 `
 ### edit the config below to modify the zones and region
 `
-kops edit cluster ${CLUSTER_NAME}
+kops edit cluster ${CLUSTER_NAME}  
+
 kops update cluster ${CLUSTER_NAME} --yes
 `
 ### A new cluster with 1 master and 2 nodes will be created
